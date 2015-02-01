@@ -21,7 +21,7 @@
 	Total we have 50 of these pairs, all equalling 101. So, 
 	1 + 2 + ... + 100 = 50(101) = 5050;
 
-	If there is an odd number, 99, we have to add the middle number special:
+	If the max is an odd number, say 99, we have to add the middle number:
 
 	1 + 2 + ... + 99 = 49(100) + 50 = 4950;
 */
@@ -56,5 +56,5 @@ function calculate(n) {
 	return 3*gauss(max_3) + 5*gauss(max_5);
 }
 
-//Answer: 266333
+calculate(1000); //Answer: 266333
 
