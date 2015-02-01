@@ -24,17 +24,11 @@
 	If the max is an odd number, say 99, we have to add the middle number:
 
 	1 + 2 + ... + 99 = 49(100) + 50 = 4950;
+
+	In simplief terms: the answer is the sum from 1 to n = n(n+1)/2
 */
 function gauss(max) {
-	var half = 0; // Used only if max is odd, defaults to 0
-	var pairs = max/2 // Used to count how many pairs are there, default to if max is even
-
-	if (max%2 !== 0) { // if max is odd, we have to calculate half
-		half = Math.ceil(max/2);
-		pairs = Math.floor(max/2); //in this case pairs is one less than half 
-	}
-
-	return pairs * (1 + max) + half; 
+	return max*(max+1)/2;
 }
 
 // This function is to get the largest number < n that devides by the factor
@@ -52,9 +46,10 @@ function get_max(n, factor) {
 function calculate(n) {
 	var max_3 = get_max(n, 3);
 	var max_5 = get_max(n, 5);
+	var max_15 = get_max(n, 15);
 
-	return 3*gauss(max_3) + 5*gauss(max_5);
+	return 3*gauss(max_3) + 5*gauss(max_5) - 15*(max_15);
 }
 
-calculate(1000); //Answer: 266333
+calculate(1000); //Answer: 233168
 
